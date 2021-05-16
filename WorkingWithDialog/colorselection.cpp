@@ -10,7 +10,7 @@ ColorSelection::ColorSelection(QWidget* parent)
 
 }
 
-void ColorSelection::HandleColorSelected(const QColor &color)
+void ColorSelection::HandleColorSelected(QColor color)
 {
     qDebug("SUKA");
   m_appColor = (QColor*)&color;

@@ -68,7 +68,7 @@ void ColorSelection::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         auto *_t = static_cast<ColorSelection *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->HandleColorSelected((*reinterpret_cast< const QColor(*)>(_a[1]))); break;
+        case 0: _t->HandleColorSelected((*reinterpret_cast< QColor(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -82,7 +82,7 @@ const QMetaObject ColorSelection::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_ColorSelection_t
 
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QColor &, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QColor, std::false_type>
 
 
 >,

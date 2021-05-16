@@ -12,7 +12,7 @@ class ColorSelection: public QObject
     ColorSelection(QWidget* parent);
     QColor GetColor();
   public slots:
-    void HandleColorSelected(const QColor &color);
+    void HandleColorSelected(QColor color);
 
   private:
     QColorDialog *m_cDialog;
