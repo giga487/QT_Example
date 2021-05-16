@@ -16,8 +16,8 @@ class ColorSelection: public QObject
 
   private:
     QColorDialog *m_cDialog;
-    QColor *m_appColor = new QColor();
-    int value = 0;
+    QColor *m_appColor;
+    int value;
 };
 
 #endif // COLORSELECTION_H
