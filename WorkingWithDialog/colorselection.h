@@ -11,8 +11,10 @@ class ColorSelection: public QObject
   public:
     ColorSelection(QWidget* parent);
     QColor GetColor();
+
   public slots:
     void HandleColorSelected(QColor color);
+    void FunzioneDelCazzo(void);
 
   private:
     QColorDialog *m_cDialog;
