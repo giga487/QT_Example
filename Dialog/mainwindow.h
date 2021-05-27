@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QColorDialog>
 #include "customdialog.h"
+#include <QDialog>
 
 #define WIDTH_MAIN 800
 #define HEIGTH_MAIN 600
@@ -24,11 +25,18 @@ public:
 
 public slots:
     void ColorDialogOpener();
-    void CustomDialogOpener();
+    void StdDialogOpenerModal();
+    void StdDialogOpenerModeless();
+    void ImageDialog();
 private:
     Ui::MainWindow *ui;
     QPushButton *buttonColorDialog;
-    QPushButton *buttonCustomDialog;
+    QPushButton *buttonStdDialogModal;
+    QPushButton *buttonStdDialogModaless;
+    QPushButton *buttonImgDialog;
     CustomDialog *customDialog;
+    QDialog *stdDialogModal;
+    QDialog *stdDialogModeless;
+    QDialog *imgDialog;
 };
 #endif // MAINWINDOW_H

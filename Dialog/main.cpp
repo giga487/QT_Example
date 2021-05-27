@@ -2,7 +2,7 @@
 
 #include <QApplication>
 #include <QColorDialog>
-
+#include <QImage>
 
 /* In questo esempio, viene mostrato un color dialog ed un custom dialog */
 

@@ -8,6 +8,7 @@
 
 #include <memory>
 #include "../../Dialog/mainwindow.h"
+#include <QtGui/qtextcursor.h>
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
@@ -22,8 +23,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    const uint offsetsAndSize[8];
-    char stringdata0[49];
+    const uint offsetsAndSize[12];
+    char stringdata0[87];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs), len 
@@ -32,11 +33,14 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 10), // "MainWindow"
 QT_MOC_LITERAL(11, 17), // "ColorDialogOpener"
 QT_MOC_LITERAL(29, 0), // ""
-QT_MOC_LITERAL(30, 18) // "CustomDialogOpener"
+QT_MOC_LITERAL(30, 20), // "StdDialogOpenerModal"
+QT_MOC_LITERAL(51, 23), // "StdDialogOpenerModeless"
+QT_MOC_LITERAL(75, 11) // "ImageDialog"
 
     },
     "MainWindow\0ColorDialogOpener\0\0"
-    "CustomDialogOpener"
+    "StdDialogOpenerModal\0StdDialogOpenerModeless\0"
+    "ImageDialog"
 };
 #undef QT_MOC_LITERAL
 
@@ -46,7 +50,7 @@ static const uint qt_meta_data_MainWindow[] = {
        9,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -54,10 +58,14 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   26,    2, 0x0a,    0 /* Public */,
-       3,    0,   27,    2, 0x0a,    1 /* Public */,
+       1,    0,   38,    2, 0x0a,    0 /* Public */,
+       3,    0,   39,    2, 0x0a,    1 /* Public */,
+       4,    0,   40,    2, 0x0a,    2 /* Public */,
+       5,    0,   41,    2, 0x0a,    3 /* Public */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -71,7 +79,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         (void)_t;
         switch (_id) {
         case 0: _t->ColorDialogOpener(); break;
-        case 1: _t->CustomDialogOpener(); break;
+        case 1: _t->StdDialogOpenerModal(); break;
+        case 2: _t->StdDialogOpenerModeless(); break;
+        case 3: _t->ImageDialog(); break;
         default: ;
         }
     }
@@ -86,7 +96,7 @@ const QMetaObject MainWindow::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWindow_t
 
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
@@ -113,13 +123,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 4;
     }
     return _id;
 }

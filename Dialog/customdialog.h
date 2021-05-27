@@ -3,13 +3,14 @@
 
 #include <QLineEdit>
 #include <QDialog>
+#include <QLabel>
 
-class CustomDialog
+class CustomDialog: public QDialog
 {
   Q_OBJECT
 
   public:
-   CustomDialog(QWidget *parent = nullptr);
+   CustomDialog(QWidget *parent = nullptr, bool _modalStyle = false, QString _label = "Dialog");
 
   private:
     QDialog *custom;
