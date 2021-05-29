@@ -49,7 +49,7 @@ void MainWindow::ColorDialogOpener()
 void MainWindow::StdDialogOpenerModal()
 {
   qDebug("Ok, custom dialog");
-  customDialog = new CustomDialog(this, true, "Modal");
+  stdDialogModal = new CustomDialog(this, true, "Modal");
 
   //stdDialog = new QDialog();
   //stdDialog->setModal(true);
@@ -60,7 +60,7 @@ void MainWindow::StdDialogOpenerModal()
 void MainWindow::StdDialogOpenerModeless()
 {
   qDebug("Ok, custom dialog");
-  customDialog = new CustomDialog(this, false, "Modeless");
+  stdDialogModeless = new CustomDialog(this, false, "Modeless");
   //stdDialog = new QDialog();
   //stdDialog->setModal(true);
   //stdDialog->show();
@@ -72,7 +72,7 @@ void MainWindow::ImageDialog()
   imgDialog->setGeometry(this->geometry().x(),this->geometry().y(),this->width(), this->height());
 
   QPixmap *imagePix = new QPixmap(":/map");
-  QLabel *imageLabel = new QLabel(this); //FONDAMENTALE, attacca la label all'interfaccia
+  QLabel *imageLabel = new QLabel(imgDialog); //FONDAMENTALE, attacca la label all'interfaccia
 
   imageLabel->setPixmap((*imagePix).scaled(this->width(),this->height(),Qt::IgnoreAspectRatio));
 
