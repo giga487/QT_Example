@@ -30,7 +30,7 @@ Server::Server(QWidget *parent)
   this->show();
   this->activateWindow();
 
-  //connect(m_server, &QTcpServer::newConnection, this, &Server::StartMessageServer);
+  connect(m_server, &QTcpServer::newConnection, this, &Server::ReceivedComm);
 
 }
 
@@ -39,17 +39,7 @@ Server::~Server()
 
 }
 
-void Server::StartMessageServer()
+void Server::ReceivedComm()
 {
-  /*
-  while(m_server->)
-  {
-    //Keep alive da inviare
-      QByteArray block;
-      QDataStream out(&block, QIODevice::WriteOnly);
-      out.setVersion(QDataStream::Qt_5_10);
 
-      out << " Invio il messaggio al client ";
-  }
-  */
 }

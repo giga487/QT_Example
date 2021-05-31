@@ -17,6 +17,7 @@ class Server: QDialog
     ~Server();
   public slots:
     void StartMessageServer();
+    void ReceivedComm();
   private:
     QTcpServer *m_server = nullptr;
 
