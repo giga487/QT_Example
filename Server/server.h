@@ -9,16 +9,16 @@
 #include <QtNetwork>
 
 
-class Server: QDialog
+class Server: QWidget
 {
-  Q_OBJECT
+    Q_OBJECT
   public:
     Server(QWidget *parent = nullptr);
     ~Server();
   public slots:
-    void StartMessageServer();
     void ReceivedComm();
   private:
+    QDialog *m_dialog = nullptr;
     QTcpServer *m_server = nullptr;
 
 

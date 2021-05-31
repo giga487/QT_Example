@@ -1695,18 +1695,7 @@ release/mainwindow.o: ../Server/mainwindow.cpp ../Server/mainwindow.h \
 		C:/Qt/6.0.1/mingw81_64/include/QtNetwork/qtnetworkversion.h \
 		../Server/client.h \
 		C:/Qt/6.0.1/mingw81_64/include/QtNetwork/QTcpSocket \
-		ui_mainwindow.h \
-		C:/Qt/6.0.1/mingw81_64/include/QtWidgets/QApplication \
-		C:/Qt/6.0.1/mingw81_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.0.1/mingw81_64/include/QtGui/qguiapplication.h \
-		C:/Qt/6.0.1/mingw81_64/include/QtGui/qinputmethod.h \
-		C:/Qt/6.0.1/mingw81_64/include/QtWidgets/QMenuBar \
-		C:/Qt/6.0.1/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/6.0.1/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/6.0.1/mingw81_64/include/QtGui/qaction.h \
-		C:/Qt/6.0.1/mingw81_64/include/QtWidgets/QStatusBar \
-		C:/Qt/6.0.1/mingw81_64/include/QtWidgets/qstatusbar.h \
-		C:/Qt/6.0.1/mingw81_64/include/QtWidgets/QWidget
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\Server\mainwindow.cpp
 
 release/server.o: ../Server/server.cpp ../Server/server.h \
