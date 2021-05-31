@@ -5,6 +5,7 @@
 #include <QDialog>
 #include "DialogGeometry.h"
 #include "QTcpSocket"
+#include <QtNetwork>
 
 class Client: public QDialog
 {
@@ -12,10 +13,14 @@ class Client: public QDialog
   public:
     Client(QWidget *parent = nullptr);
     void StartClientConnection();
-
+public slots:
+    void ReadData();
+    void Connected();
   private:
     QTcpSocket *m_socket = nullptr;
     QDataStream in;
+    int m_port;
+
 };
 
 #endif // CLIENT_H

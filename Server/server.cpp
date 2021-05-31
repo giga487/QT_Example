@@ -1,45 +1,30 @@
 #include "server.h"
 
 /* questa classe istanzia il server tcp/udp e attende la comunicazione */
-Server::Server(QWidget *parent)
+ServerEnc::ServerEnc(QObject *parent): QTcpServer(parent)
 {
- // int pos = parent->geometry
-  qDebug("Creazione del socket Tcp lato Server");
+    qDebug("Init server");
 
-    m_dialog = new QDialog(parent);
-    m_server = new QTcpServer(m_dialog);
+    if (!listen(QHostAddress::LocalHost, 60000))
+    {
+        qDebug("Error on start socket");
+        return;
+    }
 
-  QString ipAddress;
-  QList<QHostAddress> ipAddressesList = QNetworkInterface::allAddresses();
-
-  for (int i = 0; i < ipAddressesList.size(); ++i)
-  {
-      if (ipAddressesList.at(i) != QHostAddress::LocalHost && ipAddressesList.at(i).toIPv4Address())
-      {
-          ipAddress = ipAddressesList.at(i).toString();
-          break;
-      }
-  }
-
-  if (ipAddress.isEmpty())
-         ipAddress = QHostAddress(QHostAddress::LocalHost).toString();
-
-  m_dialog->setWindowTitle("Server");
-  m_dialog->setGeometry(parent->geometry().x() + parent->width(), parent->geometry().y(), SERVER_DIALOG_WIDTH, SERVER_DIALOG_HEIGHT);
-  m_dialog->setModal(false);
-  m_dialog->show();
-  m_dialog->activateWindow();
-
-  connect(m_server, &QTcpServer::newConnection, this, &Server::ReceivedComm);
-
+    qDebug("Server is listening at port %d", serverPort());
 }
 
-Server::~Server()
+ServerEnc::~ServerEnc()
 {
 
 }
 
-void Server::ReceivedComm()
+void ServerEnc::incomingConnection(qintptr socketDescriptor)
 {
-    qDebug("Connessione ricevuta");
+    qDebug("Connection found");
+
+    m_serverThread = new ServerThread(socketDescriptor, this);
+    ServerThread *serverIncomingConn = new ServerThread(socketDescriptor, this);
+    connect(serverIncomingConn, &ServerThread::finished, serverIncomingConn, &ServerThread::deleteLater);
+    serverIncomingConn->start();
 }

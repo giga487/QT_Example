@@ -1,16 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "DialogGeometry.h"
+#include "server.h"
 
-MainWindow::MainWindow(QWidget *parent)
-  : QMainWindow(parent)
-  , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
-  ui->setupUi(this);
+    ui->setupUi(this);
 
-
-  connect(ui->serverButton, &QPushButton::clicked, this, &MainWindow::StartServer);
-  connect(ui->clientButton, &QPushButton::clicked, this, &MainWindow::StartClient);
+    connect(ui->serverButton, &QPushButton::clicked, this, &MainWindow::StartServer);
+    connect(ui->clientButton, &QPushButton::clicked, this, &MainWindow::StartClient);
 }
 
 MainWindow::~MainWindow()
@@ -20,12 +18,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::StartServer()
 {
-  if(m_server == nullptr)
-    m_server = new Server(this);
+    server = new ServerEnc(this);
 }
 
 void MainWindow::StartClient()
 {
-  if(m_client == nullptr)
-    m_client = new Client(this);
+    client = new Client(this);
 }

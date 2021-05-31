@@ -7,19 +7,23 @@
 #include "DialogGeometry.h"
 #include <QMessageBox>
 #include <QtNetwork>
+#include <serverthread.h>
 
 
-class Server: QWidget
+class ServerEnc: QTcpServer
 {
     Q_OBJECT
-  public:
-    Server(QWidget *parent = nullptr);
-    ~Server();
-  public slots:
-    void ReceivedComm();
-  private:
-    QDialog *m_dialog = nullptr;
-    QTcpServer *m_server = nullptr;
+    public:
+        ServerEnc(QObject *parent = nullptr);
+        ~ServerEnc();
+
+    private:
+       QDialog *m_dialog = nullptr;
+        QTcpServer *m_server = nullptr;
+        ServerThread *m_serverThread = nullptr;
+
+    protected:
+        void incomingConnection(qintptr socketDescriptor) override;
 
 
 };

@@ -13,13 +13,15 @@ SOURCES += \
     client.cpp \
     main.cpp \
     mainwindow.cpp \
-    server.cpp
+    server.cpp \
+    serverthread.cpp
 
 HEADERS += \
     DialogGeometry.h \
     client.h \
     mainwindow.h \
-    server.h
+    server.h \
+    serverthread.h
 
 FORMS += \
     mainwindow.ui
