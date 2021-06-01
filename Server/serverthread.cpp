@@ -11,13 +11,14 @@ void ServerThread::run()
     QTcpSocket tcpSocket;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
+    out.setByteOrder(QDataStream::BigEndian);
 
     if(!tcpSocket.setSocketDescriptor(socketDescriptor))
     {
         qDebug("Errore socket Tcp");
     }
 
-    out << "CIAO ZIO";
+    out << "Hello World";
 
     while(1)
     {
