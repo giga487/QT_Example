@@ -29,9 +29,5 @@ void UdpMessage::MsgUdp()
     QByteArray Data;
     Data.append("Hello from UDP");
 
-    // Sends the datagram datagram
-    // to the host address and at port.
-    // qint64 QUdpSocket::writeDatagram(const QByteArray & datagram,
-    //                      const QHostAddress & host, quint16 port)
     socket->writeDatagram(Data, QHostAddress::LocalHost, 1234);
 }
