@@ -1,6 +1,7 @@
 #ifndef ENCODERCOMM_H
 #define ENCODERCOMM_H
 
+
 typedef struct str_MsgKeepAliveBody
  {
      unsigned Disponibile1 :8;
@@ -34,9 +35,9 @@ typedef struct str_MsgHeader
 {
     unsigned char TipoMessaggio;
     unsigned char Sender;
-    unsigned short Lunghezza;
-    unsigned int Contatore;
-}__attribute__((packed)) MSG_HEADER;
+    unsigned char Lunghezza;
+    unsigned char Contatore;
+}MSG_HEADER;
 
 typedef struct str_MsgKeepAlive
 {
@@ -44,6 +45,13 @@ typedef struct str_MsgKeepAlive
     MSG_KEEP_ALIVE_BODY Body;
     //uint16_t CheckSum;
 }__attribute__((packed))MSG_KEEP_ALIVE;
+
+
+typedef union msg_t
+{
+  char ch[9];
+  MSG_KEEP_ALIVE msg_t;
+}MSG_UNION;
 
 
 #endif // ENCODERCOMM_H

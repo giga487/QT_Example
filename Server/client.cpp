@@ -7,10 +7,6 @@ Client::Client(QWidget *parent): QDialog(parent), m_socket(new QTcpSocket(this))
     m_socket = new QTcpSocket(parent);
     m_socket->connectToHost(QHostAddress::LocalHost, m_port);
 
-    in.setDevice(m_socket);
-    in.setVersion(QDataStream::Qt_6_0);
-    in.setByteOrder(QDataStream::BigEndian);
-
     connect(m_socket, &QTcpSocket::connected, this, &Client::Connected);
     connect(m_socket, &QTcpSocket::readyRead, this, &Client::ReadData);
 
@@ -19,16 +15,11 @@ Client::Client(QWidget *parent): QDialog(parent), m_socket(new QTcpSocket(this))
 
 void Client::ReadData()
 {
-
-
-    memset(&bufferH, 0, sizeof(MSG_HEADER));
-
-    memcpy(&bufferH, m_socket->readAll(), 8);
-
-    memcpy(&head, &bufferH, 8);
+    memset(&un.ch, 0, 5);
+    memcpy(&un.ch, m_socket->readAll(), 5);
 
     // |3 | 2 | 0 16 | 0000
-    qDebug("MSG[%d] ID: %d, S: %d,  L %d, C: %d", mxRx++, head.TipoMessaggio, head.Sender, head.Lunghezza,  head.Contatore );
+    qDebug("MSG[%d] ID: %d, S: %d,  L %d, C: %d", mxRx++, un.msg_t.Header.TipoMessaggio, un.msg_t.Header.Sender, un.msg_t.Header.Lunghezza,  un.msg_t.Header.Contatore );
 
 }
 

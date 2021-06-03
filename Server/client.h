@@ -22,10 +22,9 @@ public slots:
     QDataStream in;
     int m_port;
     QByteArray rxBuffer;
-    MSG_KEEP_ALIVE bufferKA;
-    char bufferH[8];
-    MSG_HEADER head;
+    MSG_UNION un;
     int mxRx = 0;
+
 
 };
 

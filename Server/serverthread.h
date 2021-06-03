@@ -15,6 +15,11 @@ public:
 private:
     qint16 m_intProva = 0;
     int socketDescriptor;
+    MSG_KEEP_ALIVE *msg;
+
 };
+
+
+QDataStream &operator<<(QDataStream &stream,const MSG_KEEP_ALIVE *msg);
 
 #endif // SERVERTHREAD_H
