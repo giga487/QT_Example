@@ -19,12 +19,16 @@ Client::Client(QWidget *parent): QDialog(parent), m_socket(new QTcpSocket(this))
 
 void Client::ReadData()
 {
-    uint length = in.device()->bytesAvailable();
 
-    char *buffer = new char[length];  //Alloco un buffer di length
-    in.readBytes(buffer,length);      //endianity corretta
 
-    qDebug() << buffer;
+    memset(&bufferH, 0, sizeof(MSG_HEADER));
+
+    memcpy(&bufferH, m_socket->readAll(), 8);
+
+    memcpy(&head, &bufferH, 8);
+
+    // |3 | 2 | 0 16 | 0000
+    qDebug("MSG[%d] ID: %d, S: %d,  L %d, C: %d", mxRx++, head.TipoMessaggio, head.Sender, head.Lunghezza,  head.Contatore );
 
 }
 

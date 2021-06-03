@@ -6,6 +6,7 @@
 #include "DialogGeometry.h"
 #include "QTcpSocket"
 #include <QtNetwork>
+#include <encoderComm.h>
 
 class Client: public QDialog
 {
@@ -20,6 +21,11 @@ public slots:
     QTcpSocket *m_socket = nullptr;
     QDataStream in;
     int m_port;
+    QByteArray rxBuffer;
+    MSG_KEEP_ALIVE bufferKA;
+    char bufferH[8];
+    MSG_HEADER head;
+    int mxRx = 0;
 
 };
 

@@ -19,6 +19,7 @@ SOURCES += \
 HEADERS += \
     DialogGeometry.h \
     client.h \
+    encoderComm.h \
     mainwindow.h \
     server.h \
     serverthread.h
