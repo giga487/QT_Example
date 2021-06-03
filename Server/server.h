@@ -14,17 +14,15 @@ class ServerEnc: QTcpServer
 {
     Q_OBJECT
     public:
-        ServerEnc(QObject *parent = nullptr);
-        ~ServerEnc();
+      ServerEnc(QObject *parent = nullptr);
+      ~ServerEnc();
 
     private:
-       QDialog *m_dialog = nullptr;
-        QTcpServer *m_server = nullptr;
-        ServerThread *m_serverThread = nullptr;
+      QDialog *m_dialog = nullptr;
+      ServerThread *m_serverThread = nullptr;
 
     protected:
-        void incomingConnection(qintptr socketDescriptor) override;
-
+      void incomingConnection(qintptr socketDescriptor) override;
 
 };
 

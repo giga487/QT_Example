@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <server.h>
 #include <client.h>
+#include "udpmessage.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -20,10 +21,12 @@ class MainWindow : public QMainWindow
 public slots:
     void StartServer();
     void StartClient();
+    void SendUdp();
   private:
     Ui::MainWindow *ui;
     ServerEnc *server = nullptr;
     Client *client = nullptr;
+    UdpMessage *udpM = nullptr;
 
 };
 #endif // MAINWINDOW_H

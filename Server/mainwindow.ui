@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>549</width>
-    <height>280</height>
+    <width>539</width>
+    <height>271</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -156,13 +156,26 @@ p, li { white-space: pre-wrap; }
      <string>Client Panel</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="udpButton">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>180</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>UDP Message</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>549</width>
+     <width>539</width>
      <height>21</height>
     </rect>
    </property>

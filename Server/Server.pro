@@ -14,7 +14,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     server.cpp \
-    serverthread.cpp
+    serverthread.cpp \
+    udpmessage.cpp
 
 HEADERS += \
     DialogGeometry.h \
@@ -22,7 +23,8 @@ HEADERS += \
     encoderComm.h \
     mainwindow.h \
     server.h \
-    serverthread.h
+    serverthread.h \
+    udpmessage.h
 
 FORMS += \
     mainwindow.ui
