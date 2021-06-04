@@ -24,7 +24,7 @@ void ServerThread::run()
     MSG_KEEP_ALIVE *buffer = new MSG_KEEP_ALIVE();
 
     memset(buffer, 0, sizeof(MSG_KEEP_ALIVE));
-    buffer->Header.Lunghezza = 1;
+    buffer->Header.Lunghezza = sizeof(MSG_KEEP_ALIVE_BODY);
     buffer->Header.Sender = ID_ENCODER;
     buffer->Header.TipoMessaggio = ID_KEEP_ALIVE;
     buffer->Header.Contatore = 0;
