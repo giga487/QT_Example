@@ -11,6 +11,7 @@ CONFIG += c++11
 
 SOURCES += \
     client.cpp \
+    encoderComm.cpp \
     main.cpp \
     mainwindow.cpp \
     server.cpp \

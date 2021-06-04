@@ -19,7 +19,4 @@ private:
 
 };
 
-
-QDataStream &operator<<(QDataStream &stream,const MSG_KEEP_ALIVE *msg);
-
 #endif // SERVERTHREAD_H

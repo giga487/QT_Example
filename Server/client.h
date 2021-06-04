@@ -23,9 +23,8 @@ public slots:
     int m_port;
     QByteArray rxBuffer;
     MSG_UNION un;
+    MSG_KEEP_ALIVE *msg;
     int mxRx = 0;
-
-
 };
 
 #endif // CLIENT_H
