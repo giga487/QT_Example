@@ -4,18 +4,19 @@
 
 #include <QThread>
 #include <QTcpSocket>
+#include <QByteArray>
 
 typedef struct str_MsgKeepAliveBody
  {
-     unsigned Disponibile1 :8;
-     unsigned Disponibile2 :8;
-     unsigned Disponibile3 :8;
-     unsigned Disponibile4 :8;
-     unsigned Disponibile5 :8;
-     unsigned Disponibile6 :8;
-     unsigned Disponibile7 :8;
-     unsigned Disponibile8 :8;
- }__attribute__((packed)) MSG_KEEP_ALIVE_BODY;
+    unsigned int Disponibile1;
+    unsigned int  Disponibile2;
+    unsigned int  Disponibile3;
+    unsigned int  Disponibile4;
+    unsigned int  Disponibile5;
+    unsigned int  Disponibile6;
+    unsigned int  Disponibile7;
+    unsigned int  Disponibile8;
+ } MSG_KEEP_ALIVE_BODY;
 
 enum e_id_Prot_Encoder_RT_Tipo
 {

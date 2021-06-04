@@ -21,7 +21,9 @@ Client::Client(QWidget *parent): QDialog(parent), m_socket(new QTcpSocket(this))
 
 QDataStream &operator>>(QDataStream &stream, MSG_KEEP_ALIVE *msg)
 {
-    stream >> msg->Header.TipoMessaggio  >> msg->Header.Sender >> msg->Header.Lunghezza >> msg->Header.Contatore;
+    stream >> msg->Header.TipoMessaggio  >> msg->Header.Sender >> msg->Header.Lunghezza >> msg->Header.Contatore >>
+              msg->Body.Disponibile1 >> msg->Body.Disponibile2  >> msg->Body.Disponibile3 >> msg->Body.Disponibile4 >>
+              msg->Body.Disponibile5  >>  msg->Body.Disponibile6  >> msg->Body.Disponibile7  >> msg->Body.Disponibile8;
     //qDebug("RX: ID %d, S %d, L %d, Count %d",  msg->Header.TipoMessaggio,  msg->Header.Sender,  msg->Header.Lunghezza,  msg->Header.Contatore );
     return stream;
 }
@@ -32,14 +34,12 @@ void Client::ReadData()
     QBitArray keepAlive(8);
     //memset(&un.ch, 0, 5);
     //memcpy(&un.ch, m_socket->readAll(), 5);
-    in >> msg >> keepAlive;
+    in >> msg;
     //viene impacchettato in modo corretto anche se non me lo sarei aspettato
-    char buff;
 
-    memcpy(&buff, &keepAlive, 1 );
     // |3 | 2 | 0 16 | 0000
     //qDebug("MSG[%d] ID: %d, S: %d,  L %d, C: %d", mxRx++, un.msg_t.Header.TipoMessaggio, un.msg_t.Header.Sender, un.msg_t.Header.Lunghezza,  un.msg_t.Header.Contatore );
-    qDebug("MSG[%d] ID: %d, S: %d,  L %d, C: %d, MSG %u", mxRx++, msg->Header.TipoMessaggio, msg->Header.Sender, msg->Header.Lunghezza,  msg->Header.Contatore, buff );
+    qDebug("MSG[%d] ID: %d, S: %d,  L %d, C: %d, MSG 8 %u", mxRx++, msg->Header.TipoMessaggio, msg->Header.Sender, msg->Header.Lunghezza,  msg->Header.Contatore, msg->Body.Disponibile8 );
 
 }
 
