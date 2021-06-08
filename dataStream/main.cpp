@@ -11,7 +11,8 @@ int main(int argc, char *argv[])
 
 
 
-  QFile file("D:\\Git\\QT_Example\\dataStream\\img.jpg");
+  //QFile file("D:\\Git\\QT_Example\\dataStream\\img.jpg");
+  QFile file("E:\\Lavoro\\Git\\QT_Example\\dataStream\\img.jpg");
 
   if(file.exists() == true)
   {

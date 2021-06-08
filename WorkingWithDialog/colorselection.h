@@ -14,7 +14,6 @@ class ColorSelection: public QObject
 
   public slots:
     void HandleColorSelected(QColor color);
-    void FunzioneDelCazzo(void);
 
   private:
     QColorDialog *m_cDialog;

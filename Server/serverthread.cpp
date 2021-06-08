@@ -12,6 +12,7 @@ void ServerThread::run()
 {
     QTcpSocket tcpSocket;
 
+    //DATA STREAM
     QDataStream out;
     out.setDevice(&tcpSocket);
     out.setByteOrder(QDataStream::BigEndian);
