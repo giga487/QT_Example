@@ -28,6 +28,13 @@ public slots:
     void StdDialogOpenerModal();
     void StdDialogOpenerModeless();
     void ImageDialog();
+    void ImageDialogExec();
+    void mousePressEvent( QMouseEvent* ev ) override;
+    void CloseDialogImage();
+
+signals:
+    void mousePressed( const QPoint&);
+
 private:
     Ui::MainWindow *ui;
     QPushButton *buttonColorDialog;
@@ -38,5 +45,8 @@ private:
     QDialog *stdDialogModal;
     QDialog *stdDialogModeless;
     QDialog *imgDialog;
+    QDialog *imgDialogExec;
+    QPushButton *buttonImgDialogExec;
+    QPushButton *buttonInImgDialog;
 };
 #endif // MAINWINDOW_H
