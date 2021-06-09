@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file alias="map">felucca-locations.jpg</file>
+        <file alias="geometry">geometry.jpg</file>
     </qresource>
 </RCC>

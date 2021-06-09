@@ -107,7 +107,7 @@ void MainWindow::ImageDialogExec()
     imgDialog->setGeometry(this->geometry().x(),this->geometry().y(),this->width(), this->height());
     imgDialog->setAttribute(Qt::WA_DeleteOnClose); //libera la memoria ogni volta che viene chiuso.
 
-    QPixmap *imagePix = new QPixmap(":/map"); //utilizzo l'alias
+    QPixmap *imagePix = new QPixmap(":/geometry"); //utilizzo l'alias
     QLabel *imageLabel = new QLabel(imgDialog); //FONDAMENTALE, attacca la label all'interfaccia
 
     imageLabel->setPixmap((*imagePix).scaled(this->width(),this->height(),Qt::IgnoreAspectRatio));
@@ -122,7 +122,7 @@ void MainWindow::ImageDialogExec()
 
     imgDialog->exec();  //The most common way to display a modal dialog is to call its exec() function
     //Attenzione che questo exec prende il "potere" su tutta la gestione dei thread della cpu
-    //Era MEGLIO, //imgDialog->setModal(true); fare imgDialog->show() e
+    //per me era meglio, //imgDialog->setModal(true); fare imgDialog->show() e
 }
 
 void MainWindow::CloseDialogImage()
