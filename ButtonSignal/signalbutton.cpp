@@ -1,10 +1,15 @@
 #include "signalbutton.h"
 
 
-signalButton::signalButton()
+signalButton::signalButton(): signalButton(0)
 {
-  m_status = 0;
 }
+
+signalButton::signalButton(const int &val)
+{
+  m_status = val;
+}
+
 
 
 void signalButton::setValue()

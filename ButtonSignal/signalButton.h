@@ -8,6 +8,7 @@ class signalButton
 {
   public:
     signalButton();
+    signalButton(const int&);
     void setValue();
 
   private:

@@ -6,51 +6,35 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>459</width>
-    <height>322</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="m_pushButtonNum">
+   <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>240</y>
-      <width>101</width>
-      <height>41</height>
+      <x>40</x>
+      <y>40</y>
+      <width>113</width>
+      <height>22</height>
      </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
     </property>
    </widget>
-   <widget class="QLabel" name="m_label_text">
+   <widget class="QCheckBox" name="checkBox">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>181</width>
-      <height>16</height>
+      <x>220</x>
+      <y>40</y>
+      <width>76</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Label text to Modify: </string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="m_pushButtonNum_2">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>240</y>
-      <width>171</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton_Reference</string>
+     <string>CheckBox</string>
     </property>
    </widget>
   </widget>
@@ -59,7 +43,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>459</width>
+     <width>800</width>
      <height>22</height>
     </rect>
    </property>
